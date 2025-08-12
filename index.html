@@ -68,29 +68,41 @@
         transform: translateY(0);
       }
     }
+
+    /* Menos movimiento en móvil o si el usuario lo prefiere */
+    @media (prefers-reduced-motion: reduce) {
+
+      .hover-glow,
+      .card-hover,
+      .stagger-appear {
+        transition: none !important;
+        animation: none !important;
+      }
+    }
   </style>
 </head>
 
 <body class="bg-white text-gray-800">
   <!-- Header -->
   <header class="bg-white/90 backdrop-blur shadow-sm border-b sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14 sm:h-16">
         <a href="#home" class="flex items-center group" aria-label="Soil DataSpace home">
           <div
-            class="w-10 h-10 bg-gradient-to-br from-emerald-500 to-cyan-600 rounded-xl flex items-center justify-center mr-3 shadow-lg">
-            <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+            class="w-9 h-9 sm:w-10 sm:h-10 bg-gradient-to-br from-emerald-500 to-cyan-600 rounded-xl flex items-center justify-center mr-2 sm:mr-3 shadow-lg">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
           </div>
           <div>
-            <h1 class="text-xl font-bold text-gray-900">Soil DataSpace</h1>
-            <p class="text-xs text-gray-500">Ecosistema de datos del suelo</p>
+            <h1 class="text-lg sm:text-xl font-bold text-gray-900 leading-none">Soil DataSpace</h1>
+            <p class="text-[11px] sm:text-xs text-gray-500">Ecosistema de datos del suelo</p>
           </div>
         </a>
 
-        <nav class="hidden md:flex items-center gap-8" aria-label="Principal">
+        <nav class="hidden md:flex items-center gap-6 lg:gap-8" aria-label="Principal">
           <a href="#home" class="nav-link text-sm font-medium text-blue-600">Inicio</a>
           <a href="#project" class="nav-link text-sm font-medium text-gray-700 hover:text-blue-600">Proyecto</a>
           <a href="#useCases" class="nav-link text-sm font-medium text-gray-700 hover:text-blue-600">Casos de Uso</a>
@@ -98,9 +110,9 @@
           <a href="#partners" class="nav-link text-sm font-medium text-gray-700 hover:text-blue-600">Socios</a>
         </nav>
 
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-2 sm:gap-3">
           <button id="languageToggle"
-            class="text-sm bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded-full transition-colors">EN</button>
+            class="text-xs sm:text-sm bg-gray-100 hover:bg-gray-200 text-gray-700 px-2.5 sm:px-3 py-1 rounded-full transition-colors">EN</button>
           <button id="mobileMenuBtn"
             class="md:hidden inline-flex items-center justify-center p-2 rounded hover:bg-gray-100"
             aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menú">
@@ -115,68 +127,71 @@
     <!-- Menú móvil -->
     <div id="mobileMenu" class="md:hidden hidden border-t bg-white" role="dialog" aria-modal="true">
       <div class="px-4 py-3 space-y-2">
-        <a href="#home" class="block nav-link text-sm">Inicio</a>
-        <a href="#project" class="block nav-link text-sm">Proyecto</a>
-        <a href="#useCases" class="block nav-link text-sm">Casos de Uso</a>
-        <a href="#technology" class="block nav-link text-sm">Tecnología</a>
-        <a href="#partners" class="block nav-link text-sm">Socios</a>
+        <a href="#home" class="block nav-link text-base py-2">Inicio</a>
+        <a href="#project" class="block nav-link text-base py-2">Proyecto</a>
+        <a href="#useCases" class="block nav-link text-base py-2">Casos de Uso</a>
+        <a href="#technology" class="block nav-link text-base py-2">Tecnología</a>
+        <a href="#partners" class="block nav-link text-base py-2">Socios</a>
       </div>
     </div>
   </header>
 
   <!-- Hero -->
-  <section id="home" class="relative min-h-[88vh] flex items-center overflow-hidden">
+  <section id="home" class="relative min-h-[72vh] sm:min-h-[84vh] flex items-center overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-br from-emerald-50 via-cyan-50 to-indigo-100"></div>
-    <div class="absolute top-20 left-10 w-32 h-32 bg-emerald-200 rounded-full opacity-30 animate-pulse"></div>
-    <div class="absolute top-40 right-20 w-24 h-24 bg-cyan-200 rounded-full opacity-40 animate-pulse"
+    <!-- Ocultar decoraciones en pantallas muy pequeñas para reducir ruido visual -->
+    <div class="hidden sm:block absolute top-20 left-10 w-28 h-28 bg-emerald-200 rounded-full opacity-30 animate-pulse">
+    </div>
+    <div class="hidden sm:block absolute top-40 right-20 w-24 h-24 bg-cyan-200 rounded-full opacity-40 animate-pulse"
       style="animation-delay:1s"></div>
-    <div class="absolute bottom-32 left-20 w-20 h-20 bg-indigo-200 rounded-full opacity-30 animate-pulse"
+    <div
+      class="hidden sm:block absolute bottom-32 left-20 w-20 h-20 bg-indigo-200 rounded-full opacity-30 animate-pulse"
       style="animation-delay:2s"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div class="space-y-8">
-          <div class="space-y-4 stagger-appear">
-            <h2 class="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+      <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+        <div class="space-y-6 sm:space-y-8">
+          <div class="space-y-3 sm:space-y-4 stagger-appear">
+            <h2 class="text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
               Revolucionando el
               <span class="bg-gradient-to-r from-emerald-600 to-cyan-600 bg-clip-text text-transparent">conocimiento del
                 suelo</span>
             </h2>
-            <p class="text-xl text-gray-700">
+            <p class="text-base sm:text-xl text-gray-700">
               Espacio de Datos de Suelos: ecosistema soberano e interoperable que conecta datos edafológicos, ecológicos
               y geoespaciales de Andalucía y Castilla y León, alineado con Gaia-X, INSPIRE y OGC.
             </p>
           </div>
 
-          <div class="flex flex-col sm:flex-row gap-4 stagger-appear">
+          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 stagger-appear">
             <a href="#useCases"
-              class="bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-700 hover:to-cyan-700 text-white px-8 py-4 rounded-xl font-semibold hover-glow inline-flex items-center justify-center">
+              class="w-full sm:w-auto bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-700 hover:to-cyan-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover-glow inline-flex items-center justify-center">
               <span>Explorar casos de uso</span>
               <svg class="w-5 h-5 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </a>
             <a href="#technology"
-              class="border-2 border-gray-300 hover:border-emerald-500 text-gray-700 hover:text-emerald-600 px-8 py-4 rounded-xl font-semibold hover-glow text-center">
+              class="w-full sm:w-auto border-2 border-gray-300 hover:border-emerald-500 text-gray-700 hover:text-emerald-600 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover-glow text-center">
               Conocer la tecnología
             </a>
           </div>
 
-          <div class="flex flex-wrap gap-6 pt-2">
+          <div class="flex flex-wrap gap-4 sm:gap-6 pt-1 sm:pt-2">
             <div class="flex items-center">
-              <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center mr-2"><i
-                  class="fa-solid fa-shield text-emerald-600"></i></div>
-              <span class="text-sm font-medium text-gray-700">Alineado con Gaia-X</span>
+              <div class="w-7 h-7 sm:w-8 sm:h-8 bg-emerald-100 rounded-lg flex items-center justify-center mr-2"><i
+                  class="fa-solid fa-shield text-emerald-600 text-[13px] sm:text-base"></i></div>
+              <span class="text-sm sm:text-base font-medium text-gray-700">Alineado con Gaia-X</span>
             </div>
             <div class="flex items-center">
-              <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-2"><i
-                  class="fa-regular fa-file-code text-blue-600"></i></div>
-              <span class="text-sm font-medium text-gray-700">INSPIRE / OGC</span>
+              <div class="w-7 h-7 sm:w-8 sm:h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-2"><i
+                  class="fa-regular fa-file-code text-blue-600 text-[13px] sm:text-base"></i></div>
+              <span class="text-sm sm:text-base font-medium text-gray-700">INSPIRE / OGC</span>
             </div>
             <div class="flex items-center">
-              <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mr-2"><i
-                  class="fa-solid fa-diagram-project text-purple-600"></i></div>
-              <span class="text-sm font-medium text-gray-700">Principios FAIR</span>
+              <div class="w-7 h-7 sm:w-8 sm:h-8 bg-purple-100 rounded-lg flex items-center justify-center mr-2"><i
+                  class="fa-solid fa-diagram-project text-purple-600 text-[13px] sm:text-base"></i></div>
+              <span class="text-sm sm:text-base font-medium text-gray-700">Principios FAIR</span>
             </div>
           </div>
         </div>
@@ -185,23 +200,24 @@
         <div class="relative">
           <div class="bg-white rounded-2xl shadow-2xl p-2">
             <div class="bg-gray-900 rounded-xl overflow-hidden">
-              <img src="assets/hero.png" data-fallback="https://source.unsplash.com/3840x2160/?aerial,farm,fields"
-                alt="Vista aérea de parcelas agrícolas a escala regional" class="w-full h-[28rem] object-cover"
-                decoding="async" fetchpriority="high" />
+              <img src="assets/hero.png" data-fallback="https://source.unsplash.com/1600x900/?aerial,farm,fields"
+                alt="Vista aérea de parcelas agrícolas a escala regional"
+                class="w-full h-auto aspect-video sm:h-[28rem] object-cover" decoding="async" fetchpriority="high"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 700px" />
             </div>
             <div class="grid grid-cols-3 gap-2 mt-2">
               <div
-                class="bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg h-16 flex items-center justify-center text-white text-sm font-medium">
+                class="bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg h-12 sm:h-16 flex items-center justify-center text-white text-xs sm:text-sm font-medium">
                 Fertilidad</div>
               <div
-                class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg h-16 flex items-center justify-center text-white text-sm font-medium">
+                class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg h-12 sm:h-16 flex items-center justify-center text-white text-xs sm:text-sm font-medium">
                 Carbono</div>
               <div
-                class="bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg h-16 flex items-center justify-center text-white text-sm font-medium">
+                class="bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg h-12 sm:h-16 flex items-center justify-center text-white text-xs sm:text-sm font-medium">
                 Erosión</div>
             </div>
           </div>
-          <div class="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 w-64">
+          <div class="hidden sm:block absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-5 w-60">
             <div class="flex items-start">
               <div
                 class="w-10 h-10 bg-gradient-to-br from-emerald-500 to-cyan-600 rounded-xl flex items-center justify-center mr-3 flex-shrink-0">
@@ -219,50 +235,46 @@
   </section>
 
   <!-- Proyecto -->
-  <section id="project" class="py-24 bg-white">
+  <section id="project" class="py-16 sm:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-gray-900 mb-4">El proyecto Soil DataSpace</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Un ecosistema de datos soberano que transforma la gestión del suelo en Andalucía y Castilla y León, impulsando
-          la agricultura sostenible, la adaptación al cambio climático y la gestión hídrica.
-        </p>
+      <div class="text-center mb-10 sm:mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">El proyecto Soil DataSpace</h2>
+        <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">Un ecosistema de datos soberano que transforma la
+          gestión del suelo en Andalucía y Castilla y León, impulsando la agricultura sostenible, la adaptación al
+          cambio climático y la gestión hídrica.</p>
       </div>
 
-      <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
-        <div class="space-y-8">
-          <div class="bg-gradient-to-r from-emerald-50 to-cyan-50 rounded-2xl p-8">
-            <h3 class="text-2xl font-bold text-gray-900 mb-6">Nuestra visión</h3>
-            <p class="text-lg text-gray-700 mb-6">
-              Crear un ecosistema interoperable de datos del suelo alineado con Gaia-X y estándares europeos,
-              facilitando la toma de decisiones en agricultura sostenible, cambio climático y gestión hídrica.
-            </p>
-            <ul class="space-y-4">
-              <li class="flex items-start">
-                <span class="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center mr-3 mt-0.5">
-                  <i class="fa-solid fa-check text-white text-xs"></i></span>
-                <span>Soberanía del dato y credenciales verificables</span>
-              </li>
-              <li class="flex items-start">
-                <span class="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center mr-3 mt-0.5">
-                  <i class="fa-solid fa-check text-white text-xs"></i></span>
-                <span>Metadatos INSPIRE y linaje FAIR</span>
-              </li>
-              <li class="flex items-start">
-                <span class="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center mr-3 mt-0.5">
-                  <i class="fa-solid fa-check text-white text-xs"></i></span>
-                <span>Servicios OGC (WMS, WFS, WCS)</span>
-              </li>
+      <div class="grid lg:grid-cols-2 gap-10 sm:gap-16 items-center mb-16 sm:mb-24">
+        <div class="space-y-6 sm:space-y-8 order-2 lg:order-1">
+          <div class="bg-gradient-to-r from-emerald-50 to-cyan-50 rounded-2xl p-6 sm:p-8">
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Nuestra visión</h3>
+            <p class="text-base sm:text-lg text-gray-700 mb-5 sm:mb-6">Crear un ecosistema interoperable de datos del
+              suelo alineado con Gaia-X y estándares europeos, facilitando la toma de decisiones en agricultura
+              sostenible, cambio climático y gestión hídrica.</p>
+            <ul class="space-y-3 sm:space-y-4">
+              <li class="flex items-start"><span
+                  class="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center mr-3 mt-0.5"><i
+                    class="fa-solid fa-check text-white text-xs"></i></span><span class="text-sm sm:text-base">Soberanía
+                  del dato y credenciales verificables</span></li>
+              <li class="flex items-start"><span
+                  class="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center mr-3 mt-0.5"><i
+                    class="fa-solid fa-check text-white text-xs"></i></span><span class="text-sm sm:text-base">Metadatos
+                  INSPIRE y linaje FAIR</span></li>
+              <li class="flex items-start"><span
+                  class="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center mr-3 mt-0.5"><i
+                    class="fa-solid fa-check text-white text-xs"></i></span><span class="text-sm sm:text-base">Servicios
+                  OGC (WMS, WFS, WCS)</span></li>
             </ul>
           </div>
         </div>
 
-        <div class="relative">
+        <div class="relative order-1 lg:order-2">
           <img src="assets/project.png"
-            data-fallback="https://source.unsplash.com/3840x2160/?research,geospatial,computer-lab"
+            data-fallback="https://source.unsplash.com/1600x900/?research,geospatial,computer-lab"
             alt="Equipo analizando mapas y datos geoespaciales en laboratorio"
-            class="rounded-2xl shadow-2xl w-full object-cover" loading="lazy" decoding="async" />
-          <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-6 w-64">
+            class="rounded-2xl shadow-2xl w-full object-cover h-auto aspect-video" loading="lazy" decoding="async"
+            sizes="(max-width: 1024px) 100vw, 600px" />
+          <div class="hidden sm:block absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-5 w-60">
             <div class="flex items-start">
               <div
                 class="w-10 h-10 bg-gradient-to-br from-emerald-500 to-cyan-600 rounded-xl flex items-center justify-center mr-3">
@@ -278,20 +290,21 @@
       </div>
 
       <!-- Impacto -->
-      <div class="bg-gradient-to-r from-emerald-600 to-cyan-600 rounded-3xl p-12 text-white text-center">
-        <h3 class="text-3xl font-bold mb-8">Impacto del proyecto</h3>
-        <div class="grid md:grid-cols-3 gap-8">
+      <div
+        class="bg-gradient-to-r from-emerald-600 to-cyan-600 rounded-2xl sm:rounded-3xl p-8 sm:p-12 text-white text-center">
+        <h3 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Impacto del proyecto</h3>
+        <div class="grid grid-cols-3 gap-4 sm:grid-cols-3 sm:gap-8">
           <div>
-            <div class="text-4xl font-bold">30%</div>
-            <div class="text-emerald-100">Reducción esperada en erosión hídrica</div>
+            <div class="text-2xl sm:text-4xl font-bold">30%</div>
+            <div class="text-emerald-100 text-xs sm:text-base">Reducción esperada en erosión hídrica</div>
           </div>
           <div>
-            <div class="text-4xl font-bold">1.2M</div>
-            <div class="text-emerald-100">t CO₂ secuestradas al año</div>
+            <div class="text-2xl sm:text-4xl font-bold">1.2M</div>
+            <div class="text-emerald-100 text-xs sm:text-base">t CO₂ secuestradas al año</div>
           </div>
           <div>
-            <div class="text-4xl font-bold">25%</div>
-            <div class="text-emerald-100">Optimización en uso de fertilizantes</div>
+            <div class="text-2xl sm:text-4xl font-bold">25%</div>
+            <div class="text-emerald-100 text-xs sm:text-base">Optimización en uso de fertilizantes</div>
           </div>
         </div>
       </div>
@@ -299,30 +312,30 @@
   </section>
 
   <!-- Casos de uso -->
-  <section id="useCases" class="py-24 bg-gray-50">
+  <section id="useCases" class="py-16 sm:py-24 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-gray-900 mb-4">Casos de uso transformadores</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Cómo Soil DataSpace transforma la gestión del suelo en AGRI,
-          CLIMA e HIDRO</p>
+      <div class="text-center mb-10 sm:mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Casos de uso transformadores</h2>
+        <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">Cómo Soil DataSpace transforma la gestión del
+          suelo en AGRI, CLIMA e HIDRO</p>
       </div>
 
-      <div class="grid lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
         <!-- AGRI -->
         <article class="bg-white rounded-2xl shadow-xl overflow-hidden card-hover">
-          <div class="h-48 relative">
-            <img src="assets/agri.jpg" data-fallback="https://source.unsplash.com/3840x2160/?agriculture,soil,precision"
+          <div class="h-40 sm:h-48 relative">
+            <img src="assets/agri.jpg" data-fallback="https://source.unsplash.com/1200x675/?agriculture,soil,precision"
               alt="Agricultura de precisión sobre parcelas agrícolas" class="w-full h-full object-cover opacity-80"
               loading="lazy" decoding="async" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <span
-              class="absolute bottom-4 left-4 bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium">Agricultura
+              class="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 bg-white/20 backdrop-blur-sm text-white px-2.5 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">Agricultura
               sostenible</span>
           </div>
-          <div class="p-8">
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">AGRI</h3>
-            <p class="text-gray-600 mb-6">Mapas de fertilidad a alta resolución, indicadores PAC y recomendaciones de
-              fertilización precisa.</p>
+          <div class="p-6 sm:p-8">
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">AGRI</h3>
+            <p class="text-gray-600 mb-5 sm:mb-6 text-sm sm:text-base">Mapas de fertilidad a alta resolución,
+              indicadores PAC y recomendaciones de fertilización precisa.</p>
             <button
               class="w-full bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white py-3 px-6 rounded-xl font-semibold">Explorar
               datos agrícolas</button>
@@ -331,19 +344,19 @@
 
         <!-- CLIMA -->
         <article class="bg-white rounded-2xl shadow-xl overflow-hidden card-hover">
-          <div class="h-48 relative">
-            <img src="assets/clima.jpg" data-fallback="https://source.unsplash.com/3840x2160/?forest,soil,carbon"
+          <div class="h-40 sm:h-48 relative">
+            <img src="assets/clima.jpg" data-fallback="https://source.unsplash.com/1200x675/?forest,soil,carbon"
               alt="Bosque denso asociado al carbono orgánico del suelo" class="w-full h-full object-cover opacity-80"
               loading="lazy" decoding="async" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <span
-              class="absolute bottom-4 left-4 bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium">Captura
+              class="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 bg-white/20 backdrop-blur-sm text-white px-2.5 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">Captura
               de carbono</span>
           </div>
-          <div class="p-8">
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">CLIMA</h3>
-            <p class="text-gray-600 mb-6">Mapas de carbono orgánico, modelos de secuestro y evaluación de escenarios de
-              mitigación.</p>
+          <div class="p-6 sm:p-8">
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">CLIMA</h3>
+            <p class="text-gray-600 mb-5 sm:mb-6 text-sm sm:text-base">Mapas de carbono orgánico, modelos de secuestro y
+              evaluación de escenarios de mitigación.</p>
             <button
               class="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white py-3 px-6 rounded-xl font-semibold">Analizar
               carbono</button>
@@ -352,19 +365,19 @@
 
         <!-- HIDRO -->
         <article class="bg-white rounded-2xl shadow-xl overflow-hidden card-hover">
-          <div class="h-48 relative">
-            <img src="assets/hidro.jpg" data-fallback="https://source.unsplash.com/3840x2160/?river,erosion,watershed"
+          <div class="h-40 sm:h-48 relative">
+            <img src="assets/hidro.jpg" data-fallback="https://source.unsplash.com/1200x675/?river,erosion,watershed"
               alt="Río trenzado con procesos de erosión en cuenca" class="w-full h-full object-cover opacity-80"
               loading="lazy" decoding="async" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <span
-              class="absolute bottom-4 left-4 bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium">Gestión
+              class="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 bg-white/20 backdrop-blur-sm text-white px-2.5 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">Gestión
               hídrica</span>
           </div>
-          <div class="p-8">
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">HIDRO</h3>
-            <p class="text-gray-600 mb-6">Mapas de riesgo de erosión, modelos de escorrentía y alertas tempranas de
-              inundación.</p>
+          <div class="p-6 sm:p-8">
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">HIDRO</h3>
+            <p class="text-gray-600 mb-5 sm:mb-6 text-sm sm:text-base">Mapas de riesgo de erosión, modelos de
+              escorrentía y alertas tempranas de inundación.</p>
             <button
               class="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white py-3 px-6 rounded-xl font-semibold">Evaluar
               riesgos</button>
@@ -375,53 +388,56 @@
   </section>
 
   <!-- Tecnología -->
-  <section id="technology" class="py-24 bg-white">
+  <section id="technology" class="py-16 sm:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-gray-900 mb-4">Tecnología de vanguardia</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Arquitectura robusta y soberana que garantiza
+      <div class="text-center mb-10 sm:mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Tecnología de vanguardia</h2>
+        <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">Arquitectura robusta y soberana que garantiza
           interoperabilidad, seguridad y escalabilidad.</p>
       </div>
 
-      <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
-        <div class="space-y-8">
-          <div class="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-8">
-            <h3 class="text-2xl font-bold text-gray-900 mb-6">Arquitectura Gaia-X</h3>
-            <p class="text-gray-700 mb-6">Datos en origen, acceso federado y contratos digitales. Control de uso,
-              trazabilidad y auditoría.</p>
-            <div class="grid sm:grid-cols-2 gap-4">
-              <div class="bg-white rounded-lg p-4 text-center">
-                <div class="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-3 mx-auto">
+      <div class="grid lg:grid-cols-2 gap-10 sm:gap-16 items-center mb-16 sm:mb-24">
+        <div class="space-y-6 sm:space-y-8 order-2 lg:order-1">
+          <div class="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-6 sm:p-8">
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Arquitectura Gaia-X</h3>
+            <p class="text-gray-700 mb-5 sm:mb-6 text-sm sm:text-base">Datos en origen, acceso federado y contratos
+              digitales. Control de uso, trazabilidad y auditoría.</p>
+            <div class="grid grid-cols-2 gap-3 sm:gap-4">
+              <div class="bg-white rounded-lg p-3 sm:p-4 text-center">
+                <div
+                  class="w-9 h-9 sm:w-10 sm:h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-2 sm:mb-3 mx-auto">
                   <i class="fa-solid fa-check text-emerald-600"></i>
                 </div>
-                <h4 class="font-semibold text-gray-900">Soberanía del dato</h4>
+                <h4 class="font-semibold text-gray-900 text-sm sm:text-base">Soberanía del dato</h4>
               </div>
-              <div class="bg-white rounded-lg p-4 text-center">
-                <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-3 mx-auto">
+              <div class="bg-white rounded-lg p-3 sm:p-4 text-center">
+                <div
+                  class="w-9 h-9 sm:w-10 sm:h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-2 sm:mb-3 mx-auto">
                   <i class="fa-solid fa-lock text-blue-600"></i>
                 </div>
-                <h4 class="font-semibold text-gray-900">Seguridad reforzada</h4>
+                <h4 class="font-semibold text-gray-900 text-sm sm:text-base">Seguridad reforzada</h4>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="relative">
-          <img src="assets/tech.jpg" data-fallback="https://source.unsplash.com/3840x2160/?data-center,servers"
-            alt="Racks de servidores en centro de datos" class="rounded-2xl shadow-2xl w-full object-cover"
-            loading="lazy" decoding="async" />
+        <div class="relative order-1 lg:order-2">
+          <img src="assets/tech.jpg" data-fallback="https://source.unsplash.com/1600x900/?data-center,servers"
+            alt="Racks de servidores en centro de datos"
+            class="rounded-2xl shadow-2xl w-full object-cover h-auto aspect-video" loading="lazy" decoding="async"
+            sizes="(max-width: 1024px) 100vw, 600px" />
           <div class="grid grid-cols-4 gap-1 mt-2">
             <div
-              class="bg-gradient-to-br from-emerald-500 to-emerald-600 rounded h-8 flex items-center justify-center text-white text-xs font-medium">
+              class="bg-gradient-to-br from-emerald-500 to-emerald-600 rounded h-8 flex items-center justify-center text-white text-[10px] sm:text-xs font-medium">
               Gaia-X</div>
             <div
-              class="bg-gradient-to-br from-blue-500 to-blue-600 rounded h-8 flex items-center justify-center text-white text-xs font-medium">
+              class="bg-gradient-to-br from-blue-500 to-blue-600 rounded h-8 flex items-center justify-center text-white text-[10px] sm:text-xs font-medium">
               INSPIRE</div>
             <div
-              class="bg-gradient-to-br from-purple-500 to-purple-600 rounded h-8 flex items-center justify-center text-white text-xs font-medium">
+              class="bg-gradient-to-br from-purple-500 to-purple-600 rounded h-8 flex items-center justify-center text-white text-[10px] sm:text-xs font-medium">
               OGC</div>
             <div
-              class="bg-gradient-to-br from-gray-500 to-gray-600 rounded h-8 flex items-center justify-center text-white text-xs font-medium">
+              class="bg-gradient-to-br from-gray-500 to-gray-600 rounded h-8 flex items-center justify-center text-white text-[10px] sm:text-xs font-medium">
               FAIR</div>
           </div>
         </div>
@@ -430,108 +446,109 @@
   </section>
 
   <!-- Socios -->
-  <section id="partners" class="py-24 bg-gradient-to-br from-gray-50 via-white to-emerald-50">
+  <section id="partners" class="hidden sm:block py-16 sm:py-24 bg-gradient-to-br from-gray-50 via-white to-emerald-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-gray-900 mb-4">Ecosistema de colaboración</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Consorcio público-privado liderado por la Universidad de Jaén con expertise académico, tecnológico y
-          sectorial.
-        </p>
+      <div class="text-center mb-10 sm:mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Ecosistema de colaboración</h2>
+        <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">Consorcio público-privado liderado por la
+          Universidad de Jaén con expertise académico, tecnológico y sectorial.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-        <div class="bg-white rounded-2xl p-8 shadow-xl text-center card-hover">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
+        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl text-center card-hover">
           <div
-            class="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl mx-auto mb-6 flex items-center justify-center">
-            <span class="text-2xl font-bold text-white">UJA</span>
+            class="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl mx-auto mb-5 sm:mb-6 flex items-center justify-center">
+            <span class="text-xl sm:text-2xl font-bold text-white">UJA</span>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-2">Universidad de Jaén</h3>
-          <p class="text-gray-600 mb-4">Líder del proyecto y coordinación científica</p>
-          <div class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full font-medium">Líder</div>
+          <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-1.5 sm:mb-2">Universidad de Jaén</h3>
+          <p class="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">Líder del proyecto y coordinación científica</p>
+          <div class="inline-block bg-blue-100 text-blue-800 text-xs sm:text-sm px-3 py-1 rounded-full font-medium">
+            Líder</div>
         </div>
 
-        <div class="bg-white rounded-2xl p-8 shadow-xl text-center card-hover">
+        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl text-center card-hover">
           <div
-            class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-700 rounded-2xl mx-auto mb-6 flex items-center justify-center">
-            <span class="text-2xl font-bold text-white">IFAPA</span>
+            class="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-green-500 to-green-700 rounded-2xl mx-auto mb-5 sm:mb-6 flex items-center justify-center">
+            <span class="text-xl sm:text-2xl font-bold text-white">IFAPA</span>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-2">IFAPA</h3>
-          <p class="text-gray-600 mb-4">Proveedor de datos edafológicos de Andalucía</p>
-          <div class="inline-block bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full font-medium">Colaborador
-          </div>
+          <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-1.5 sm:mb-2">IFAPA</h3>
+          <p class="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">Proveedor de datos edafológicos de Andalucía</p>
+          <div class="inline-block bg-green-100 text-green-800 text-xs sm:text-sm px-3 py-1 rounded-full font-medium">
+            Colaborador</div>
         </div>
 
-        <div class="bg-white rounded-2xl p-8 shadow-xl text-center card-hover">
+        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl text-center card-hover">
           <div
-            class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-700 rounded-2xl mx-auto mb-6 flex items-center justify-center">
-            <span class="text-2xl font-bold text-white">ITACyL</span>
+            class="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-red-500 to-red-700 rounded-2xl mx-auto mb-5 sm:mb-6 flex items-center justify-center">
+            <span class="text-xl sm:text-2xl font-bold text-white">ITACyL</span>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-2">ITACyL</h3>
-          <p class="text-gray-600 mb-4">Proveedor de datos de Castilla y León</p>
-          <div class="inline-block bg-red-100 text-red-800 text-sm px-3 py-1 rounded-full font-medium">Colaborador</div>
+          <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-1.5 sm:mb-2">ITACyL</h3>
+          <p class="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">Proveedor de datos de Castilla y León</p>
+          <div class="inline-block bg-red-100 text-red-800 text-xs sm:text-sm px-3 py-1 rounded-full font-medium">
+            Colaborador</div>
         </div>
 
-        <div class="bg-white rounded-2xl p-8 shadow-xl text-center card-hover">
+        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl text-center card-hover">
           <div
-            class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-700 rounded-2xl mx-auto mb-6 flex items-center justify-center">
-            <span class="text-2xl font-bold text-white">Esri</span>
+            class="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-orange-500 to-orange-700 rounded-2xl mx-auto mb-5 sm:mb-6 flex items-center justify-center">
+            <span class="text-xl sm:text-2xl font-bold text-white">Esri</span>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-2">Esri España</h3>
-          <p class="text-gray-600 mb-4">Tecnología SIG y plataformas de análisis</p>
-          <div class="inline-block bg-orange-100 text-orange-800 text-sm px-3 py-1 rounded-full font-medium">Colaborador
-          </div>
+          <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-1.5 sm:mb-2">Esri España</h3>
+          <p class="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">Tecnología SIG y plataformas de análisis</p>
+          <div class="inline-block bg-orange-100 text-orange-800 text-xs sm:text-sm px-3 py-1 rounded-full font-medium">
+            Colaborador</div>
         </div>
 
-        <div class="bg-white rounded-2xl p-8 shadow-xl text-center card-hover">
+        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl text-center card-hover">
           <div
-            class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl mx-auto mb-6 flex items-center justify-center">
-            <span class="text-2xl font-bold text-white">Aire</span>
+            class="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl mx-auto mb-5 sm:mb-6 flex items-center justify-center">
+            <span class="text-xl sm:text-2xl font-bold text-white">Aire</span>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-2">Aire Networks</h3>
-          <p class="text-gray-600 mb-4">Clearing House y credenciales verificables</p>
-          <div class="inline-block bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full font-medium">Colaborador
-          </div>
+          <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-1.5 sm:mb-2">Aire Networks</h3>
+          <p class="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">Clearing House y credenciales verificables</p>
+          <div class="inline-block bg-purple-100 text-purple-800 text-xs sm:text-sm px-3 py-1 rounded-full font-medium">
+            Colaborador</div>
         </div>
 
-        <div class="bg-white rounded-2xl p-8 shadow-xl text-center card-hover">
+        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-xl text-center card-hover">
           <div
-            class="w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-2xl mx-auto mb-6 flex items-center justify-center">
-            <span class="text-2xl font-bold text-white">Coop</span>
+            class="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-2xl mx-auto mb-5 sm:mb-6 flex items-center justify-center">
+            <span class="text-xl sm:text-2xl font-bold text-white">Coop</span>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-2">Cooperativas Agroalimentarias</h3>
-          <p class="text-gray-600 mb-4">Usuario final y validación de servicios</p>
-          <div class="inline-block bg-yellow-100 text-yellow-800 text-sm px-3 py-1 rounded-full font-medium">Colaborador
-          </div>
+          <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-1.5 sm:mb-2">Cooperativas Agroalimentarias</h3>
+          <p class="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">Usuario final y validación de servicios</p>
+          <div class="inline-block bg-yellow-100 text-yellow-800 text-xs sm:text-sm px-3 py-1 rounded-full font-medium">
+            Colaborador</div>
         </div>
       </div>
 
       <!-- Cobertura geográfica -->
-      <div class="bg-white rounded-2xl shadow-xl p-8">
-        <h3 class="text-2xl font-bold text-center text-gray-900 mb-6">Cobertura geográfica</h3>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div class="bg-white rounded-2xl shadow-xl p-6 sm:p-8">
+        <h3 class="text-2xl font-bold text-center text-gray-900 mb-4 sm:mb-6">Cobertura geográfica</h3>
+        <div class="grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
           <div>
             <img src="assets/iberia.jpg"
               data-fallback="https://eoimages.gsfc.nasa.gov/images/imagerecords/137000/137643/Portugal.A2016198.1345.250m.jpg"
               alt="Imagen satelital de la Península Ibérica (NASA MODIS)"
-              class="rounded-xl shadow-lg w-full object-cover" loading="lazy" decoding="async" />
+              class="rounded-xl shadow-lg w-full object-cover h-auto aspect-video" loading="lazy" decoding="async"
+              sizes="(max-width: 1024px) 100vw, 600px" />
           </div>
-          <div class="space-y-4">
-            <div class="flex items-center p-4 bg-blue-50 rounded-xl">
+          <div class="space-y-3 sm:space-y-4">
+            <div class="flex items-center p-3 sm:p-4 bg-blue-50 rounded-xl">
               <div class="w-3 h-3 bg-blue-600 rounded-full mr-3"></div>
               <div>
                 <h4 class="font-semibold text-gray-900">Andalucía</h4>
                 <p class="text-gray-600 text-sm">Datos de suelo de IFAPA y otras instituciones</p>
               </div>
             </div>
-            <div class="flex items-center p-4 bg-green-50 rounded-xl">
+            <div class="flex items-center p-3 sm:p-4 bg-green-50 rounded-xl">
               <div class="w-3 h-3 bg-green-600 rounded-full mr-3"></div>
               <div>
                 <h4 class="font-semibold text-gray-900">Castilla y León</h4>
                 <p class="text-gray-600 text-sm">Datos de suelo de ITACyL y redes de monitoreo</p>
               </div>
             </div>
-            <div class="flex items-center p-4 bg-purple-50 rounded-xl">
+            <div class="flex items-center p-3 sm:p-4 bg-purple-50 rounded-xl">
               <div class="w-3 h-3 bg-purple-600 rounded-full mr-3"></div>
               <div>
                 <h4 class="font-semibold text-gray-900">Integración europea</h4>
@@ -545,38 +562,36 @@
   </section>
 
   <!-- CTA -->
-  <section class="py-24 bg-gradient-to-r from-emerald-600 to-cyan-600">
+  <section class="py-16 sm:py-24 bg-gradient-to-r from-emerald-600 to-cyan-600">
     <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-      <h2 class="text-4xl font-bold text-white mb-6">Únase al ecosistema Soil DataSpace</h2>
-      <p class="text-xl text-emerald-100 mb-10">Para proveedores de datos, desarrolladores, investigadores y usuarios
-        finales.</p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4 sm:mb-6">Únase al ecosistema Soil DataSpace</h2>
+      <p class="text-lg sm:text-xl text-emerald-100 mb-8 sm:mb-10">Para proveedores de datos, desarrolladores,
+        investigadores y usuarios finales.</p>
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
         <a href="#"
-          class="bg-white text-emerald-600 hover:bg-gray-100 px-8 py-4 rounded-xl font-semibold hover-glow text-lg">Solicitar
+          class="w-full sm:w-auto bg-white text-emerald-600 hover:bg-gray-100 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover-glow text-base sm:text-lg">Solicitar
           acceso</a>
         <a href="#"
-          class="border-2 border-white text-white hover:bg-white/10 px-8 py-4 rounded-xl font-semibold hover-glow text-lg">Contactar</a>
+          class="w-full sm:w-auto border-2 border-white text-white hover:bg-white/10 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover-glow text-base sm:text-lg">Contactar</a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white pt-16 pb-8">
+  <footer class="bg-gray-900 text-white pt-12 sm:pt-16 pb-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-4 gap-8 mb-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10 sm:mb-12">
         <div>
-          <div class="flex items-center mb-6">
+          <div class="flex items-center mb-5 sm:mb-6">
             <div
-              class="w-10 h-10 bg-gradient-to-br from-emerald-500 to-cyan-600 rounded-xl flex items-center justify-center mr-3">
+              class="w-9 h-9 sm:w-10 sm:h-10 bg-gradient-to-br from-emerald-500 to-cyan-600 rounded-xl flex items-center justify-center mr-3">
               <i class="fa-regular fa-map text-white"></i>
             </div>
-            <span class="text-xl font-bold">Soil DataSpace</span>
+            <span class="text-lg sm:text-xl font-bold">Soil DataSpace</span>
           </div>
-          <p class="text-gray-400 mb-6">
-            Ecosistema soberano de datos del suelo alineado con Gaia-X, transformando la gestión del suelo en Andalucía
-            y Castilla y León.
-          </p>
-          <div class="flex space-x-4 text-gray-400">
+          <p class="text-gray-400 mb-5 sm:mb-6 text-sm sm:text-base">Ecosistema soberano de datos del suelo alineado con
+            Gaia-X, transformando la gestión del suelo en Andalucía y Castilla y León.</p>
+          <div class="flex space-x-4 text-gray-400 text-lg">
             <a href="#" class="hover:text-white" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
             <a href="#" class="hover:text-white" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
             <a href="#" class="hover:text-white" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
@@ -584,8 +599,8 @@
         </div>
 
         <div>
-          <h3 class="text-lg font-semibold mb-6">Proyecto</h3>
-          <ul class="space-y-3">
+          <h3 class="text-base sm:text-lg font-semibold mb-4 sm:mb-6">Proyecto</h3>
+          <ul class="space-y-2.5 sm:space-y-3 text-sm sm:text-base">
             <li><a href="#project" class="text-gray-400 hover:text-white">Visión y misión</a></li>
             <li><a href="#project" class="text-gray-400 hover:text-white">Objetivos estratégicos</a></li>
             <li><a href="#project" class="text-gray-400 hover:text-white">Impacto esperado</a></li>
@@ -594,8 +609,8 @@
         </div>
 
         <div>
-          <h3 class="text-lg font-semibold mb-6">Recursos</h3>
-          <ul class="space-y-3">
+          <h3 class="text-base sm:text-lg font-semibold mb-4 sm:mb-6">Recursos</h3>
+          <ul class="space-y-2.5 sm:space-y-3 text-sm sm:text-base">
             <li><a href="#" class="text-gray-400 hover:text-white">Documentación API</a></li>
             <li><a href="#" class="text-gray-400 hover:text-white">Tutoriales</a></li>
             <li><a href="#useCases" class="text-gray-400 hover:text-white">Casos de estudio</a></li>
@@ -604,8 +619,8 @@
         </div>
 
         <div>
-          <h3 class="text-lg font-semibold mb-6">Contacto</h3>
-          <ul class="space-y-3 text-gray-400">
+          <h3 class="text-base sm:text-lg font-semibold mb-4 sm:mb-6">Contacto</h3>
+          <ul class="space-y-2.5 sm:space-y-3 text-gray-400 text-sm sm:text-base">
             <li>Universidad de Jaén</li>
             <li>Campus de las Lagunillas</li>
             <li>23071 Jaén, España</li>
@@ -616,15 +631,14 @@
         </div>
       </div>
 
-      <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
-        © 2025 Soil DataSpace. Alineado con Gaia-X, INSPIRE y OGC.
-      </div>
+      <div class="border-t border-gray-800 pt-6 sm:pt-8 text-center text-xs sm:text-sm text-gray-400">© 2025 Soil
+        DataSpace. Alineado con Gaia-X, INSPIRE y OGC.</div>
     </div>
   </footer>
 
   <!-- Botón volver arriba -->
   <button id="toTop"
-    class="fixed bottom-6 right-6 hidden items-center gap-2 bg-gray-900/90 text-white px-4 py-2 rounded-full shadow-lg hover:bg-gray-900"
+    class="fixed bottom-6 right-6 hidden items-center gap-2 bg-gray-900/90 text-white px-3 sm:px-4 py-2 rounded-full shadow-lg hover:bg-gray-900"
     aria-label="Volver arriba">
     <i class="fa-solid fa-arrow-up"></i><span class="hidden sm:inline">Arriba</span>
   </button>
@@ -636,16 +650,21 @@
       this.textContent = this.textContent.trim() === 'EN' ? 'ES' : 'EN';
     });
 
-    // Menú móvil
+    // Menú móvil accesible
     const mobileBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     mobileBtn.addEventListener('click', () => {
       const isOpen = !mobileMenu.classList.contains('hidden');
       mobileMenu.classList.toggle('hidden');
       mobileBtn.setAttribute('aria-expanded', String(!isOpen));
+      // Trampa de foco ligera: lleva el foco al primer enlace al abrir
+      if (!isOpen) {
+        const firstLink = mobileMenu.querySelector('a');
+        if (firstLink) firstLink.focus();
+      }
     });
 
-    // Resaltado de sección activa
+    // Resaltado de sección activa (umbral menor en móvil)
     const links = Array.from(document.querySelectorAll('.nav-link'));
     const secs = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
     const io = new IntersectionObserver((entries) => {
@@ -657,7 +676,7 @@
           if (active) active.classList.add('text-blue-600');
         }
       });
-    }, { threshold: 0.5 });
+    }, { threshold: window.matchMedia('(max-width: 640px)').matches ? 0.35 : 0.5 });
     secs.forEach(sec => io.observe(sec));
 
     // Fallback de imágenes: si falla la local, usa data-fallback remota
