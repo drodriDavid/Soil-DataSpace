@@ -22,7 +22,7 @@
 
             // Junta de Andalucía – organismos adicionales citados
             //{ abbr: 'ADA', name: 'Agencia Digital de Andalucía (ADA)', desc: 'Ecosistema digital y datos públicos en Andalucía', grad: 'from-cyan-600 to-cyan-800', bcol: 'bg-cyan-100 text-cyan-800', logo: 'assets/images/logos/ifapa.jpg' },
-            { abbr: 'REDIAM', name: 'REDIAM', desc: 'Repositorio y servicios de información ambiental de Andalucía', grad: 'from-lime-600 to-lime-800', bcol: 'bg-lime-100 text-lime-800', logo: 'assets/images/logos/ifapa.jpg' },
+            //{ abbr: 'REDIAM', name: 'REDIAM', desc: 'Repositorio y servicios de información ambiental de Andalucía', grad: 'from-lime-600 to-lime-800', bcol: 'bg-lime-100 text-lime-800', logo: 'assets/images/logos/ifapa.jpg' },
 
             // Centros, clústeres y fundaciones señalados
             { abbr: 'Andaltec', name: 'Andaltec', desc: 'Centro tecnológico (plástico, materiales y transferencia)', grad: 'from-fuchsia-600 to-fuchsia-800', bcol: 'bg-fuchsia-100 text-fuchsia-800', logo: 'assets/images/logos/andaltec.png' },
@@ -33,35 +33,35 @@
             //{ abbr: 'CES', name: 'CES', desc: 'Entidad mencionada en el ecosistema de apoyo', grad: 'from-stone-500 to-stone-700', bcol: 'bg-stone-100 text-stone-800', logo: 'assets/images/logos/ifapa.jpg' },
             { abbr: 'D.O. SM', name: 'D.O. Sierra Mágina', desc: 'Denominación de Origen (sector oleícola)', grad: 'from-green-700 to-green-900', bcol: 'bg-green-100 text-green-800', logo: 'assets/images/logos/sierraMagina.png' },
             { abbr: 'COI', name: 'Consejo Oleícola Internacional', desc: 'Organismo internacional del sector oleícola', grad: 'from-slate-600 to-slate-800', bcol: 'bg-slate-100 text-slate-800', logo: 'assets/images/logos/COI.png' },
-            { abbr: 'IGP', name: 'IGP (indicaciones protegidas)', desc: 'Figuras de calidad diferenciada', grad: 'from-zinc-500 to-zinc-700', bcol: 'bg-zinc-100 text-zinc-800', logo: 'assets/images/logos/ifapa.jpg' },
+            //{ abbr: 'IGP', name: 'IGP (indicaciones protegidas)', desc: 'Figuras de calidad diferenciada', grad: 'from-zinc-500 to-zinc-700', bcol: 'bg-zinc-100 text-zinc-800', logo: 'assets/images/logos/ifapa.jpg' },
 
             // Asociaciones sectoriales
-            { abbr: 'ASAJA', name: 'ASAJA', desc: 'Asociación agraria; representación de agricultores', grad: 'from-emerald-700 to-emerald-900', bcol: 'bg-emerald-100 text-emerald-800', logo: 'assets/images/logos/ifapa.jpg' },
-            { abbr: 'COAG', name: 'COAG', desc: 'Coordinadora de organizaciones de agricultores y ganaderos', grad: 'from-lime-700 to-lime-900', bcol: 'bg-lime-100 text-lime-800', logo: 'assets/images/logos/ifapa.jpg' },
-            { abbr: 'UPA', name: 'UPA', desc: 'Unión de Pequeños Agricultores y Ganaderos', grad: 'from-teal-700 to-teal-900', bcol: 'bg-teal-100 text-teal-800', logo: 'assets/images/logos/ifapa.jpg' },
-            { abbr: 'INFAOLIVA', name: 'INFAOLIVA', desc: 'Federación del sector oleícola', grad: 'from-yellow-600 to-yellow-800', bcol: 'bg-yellow-100 text-yellow-800', logo: 'assets/images/logos/ifapa.jpg' },
+            { abbr: 'ASAJA', name: 'ASAJA', desc: 'Asociación agraria; representación de agricultores', grad: 'from-emerald-700 to-emerald-900', bcol: 'bg-emerald-100 text-emerald-800', logo: 'assets/images/logos/asaja.jpg' },
+            { abbr: 'COAG', name: 'COAG', desc: 'Coordinadora de organizaciones de agricultores y ganaderos', grad: 'from-lime-700 to-lime-900', bcol: 'bg-lime-100 text-lime-800', logo: 'assets/images/logos/coag.jpg' },
+            { abbr: 'UPA', name: 'UPA', desc: 'Unión de Pequeños Agricultores y Ganaderos', grad: 'from-teal-700 to-teal-900', bcol: 'bg-teal-100 text-teal-800', logo: 'assets/images/logos/upa.png' },
+            { abbr: 'INFAOLIVA', name: 'INFAOLIVA', desc: 'Federación del sector oleícola', grad: 'from-yellow-600 to-yellow-800', bcol: 'bg-yellow-100 text-yellow-800', logo: 'assets/images/logos/infaoliva.png' },
 
             // Empresas privadas citadas (muestras representativas)
-            { abbr: 'SIE', name: 'Sistemas Informáticos Europeos', desc: 'Tecnología y servicios TIC', grad: 'from-blue-500 to-blue-700', bcol: 'bg-blue-100 text-blue-800', logo: 'assets/images/logos/ifapa.jpg' },
-            { abbr: 'JAV', name: 'JAV', desc: 'Empresa interesada en datos/servicios del espacio', grad: 'from-rose-600 to-rose-800', bcol: 'bg-rose-100 text-rose-800', logo: 'assets/images/logos/ifapa.jpg' },
-            { abbr: 'CONSULE', name: 'CONSULE', desc: 'Consultoría/servicios vinculados al ecosistema', grad: 'from-indigo-600 to-indigo-800', bcol: 'bg-indigo-100 text-indigo-800', logo: 'assets/images/logos/ifapa.jpg' },
-            { abbr: 'Clúster', name: 'Clúster del Plástico', desc: 'Asociación empresarial del sector del plástico', grad: 'from-cyan-500 to-cyan-700', bcol: 'bg-cyan-100 text-cyan-800', logo: 'assets/images/logos/ifapa.jpg' },
-            { abbr: 'Deere', name: 'John Deere', desc: 'Fabricante; agricultura de precisión y maquinaria', grad: 'from-green-500 to-green-700', bcol: 'bg-green-100 text-green-800', logo: 'assets/images/logos/ifapa.jpg' },
-            { abbr: 'Fertina', name: 'Fertinagro Biotech', desc: 'Bio/Agrotech; fertilización y suelos', grad: 'from-amber-500 to-amber-700', bcol: 'bg-amber-100 text-amber-800', logo: 'assets/images/logos/ifapa.jpg' },
-            { abbr: 'Cajamar', name: 'Cajamar', desc: 'Finanzas/cooperativismo agro; innovación sectorial', grad: 'from-sky-500 to-sky-700', bcol: 'bg-sky-100 text-sky-800', logo: 'assets/images/logos/ifapa.jpg' },
-            { abbr: 'NUTESCA', name: 'NUTESCA', desc: 'Empresa interesada en datos y analítica', grad: 'from-fuchsia-500 to-fuchsia-700', bcol: 'bg-fuchsia-100 text-fuchsia-800', logo: 'assets/images/logos/ifapa.jpg' },
+            { abbr: 'SIE', name: 'Sistemas Informáticos Europeos', desc: 'Tecnología y servicios TIC', grad: 'from-blue-500 to-blue-700', bcol: 'bg-blue-100 text-blue-800', logo: 'assets/images/logos/sie.jpg' },
+            { abbr: 'JAV', name: 'JAV', desc: 'Empresa interesada en datos/servicios del espacio', grad: 'from-rose-600 to-rose-800', bcol: 'bg-rose-100 text-rose-800', logo: 'assets/images/logos/jav.jpg' },
+            { abbr: 'CONSULE', name: 'CONSULE', desc: 'Consultoría/servicios vinculados al ecosistema', grad: 'from-indigo-600 to-indigo-800', bcol: 'bg-indigo-100 text-indigo-800', logo: 'assets/images/logos/consule.png' },
+            //{ abbr: 'Clúster', name: 'Clúster del Plástico', desc: 'Asociación empresarial del sector del plástico', grad: 'from-cyan-500 to-cyan-700', bcol: 'bg-cyan-100 text-cyan-800', logo: 'assets/images/logos/ifapa.jpg' },
+            { abbr: 'Deere', name: 'John Deere', desc: 'Fabricante; agricultura de precisión y maquinaria', grad: 'from-green-500 to-green-700', bcol: 'bg-green-100 text-green-800', logo: 'assets/images/logos/deere.png' },
+            { abbr: 'Fertina', name: 'Fertinagro Biotech', desc: 'Bio/Agrotech; fertilización y suelos', grad: 'from-amber-500 to-amber-700', bcol: 'bg-amber-100 text-amber-800', logo: 'assets/images/logos/ferti.jpg' },
+            { abbr: 'Cajamar', name: 'Cajamar', desc: 'Finanzas/cooperativismo agro; innovación sectorial', grad: 'from-sky-500 to-sky-700', bcol: 'bg-sky-100 text-sky-800', logo: 'assets/images/logos/cajamar.jpg' },
+            { abbr: 'NUTESCA', name: 'NUTESCA', desc: 'Empresa interesada en datos y analítica', grad: 'from-fuchsia-500 to-fuchsia-700', bcol: 'bg-fuchsia-100 text-fuchsia-800', logo: 'assets/images/logos/nutesca.png' },
 
             // Grupos genéricos tal y como aparecen en la memoria
-            { abbr: 'AgroSrv', name: 'Empresas de servicios del sector agroalimentario', desc: 'Productores, consumidores y analistas de datos', grad: 'from-orange-600 to-orange-800', bcol: 'bg-orange-100 text-orange-800', logo: 'assets/images/logos/ifapa.jpg' },
-            { abbr: 'AmbSrv', name: 'Empresas de servicios del sector ambiental', desc: 'Productores, consumidores y analistas de datos', grad: 'from-emerald-600 to-emerald-800', bcol: 'bg-emerald-100 text-emerald-800', logo: 'assets/images/logos/ifapa.jpg' },
-            { abbr: 'EnergInf', name: 'Empresas de infraestructuras y energía', desc: 'Productores, consumidores y analistas de datos', grad: 'from-slate-600 to-slate-800', bcol: 'bg-slate-100 text-slate-800', logo: 'assets/images/logos/ifapa.jpg' },
+            //{ abbr: 'AgroSrv', name: 'Empresas de servicios del sector agroalimentario', desc: 'Productores, consumidores y analistas de datos', grad: 'from-orange-600 to-orange-800', bcol: 'bg-orange-100 text-orange-800', logo: 'assets/images/logos/ifapa.jpg' },
+            //{ abbr: 'AmbSrv', name: 'Empresas de servicios del sector ambiental', desc: 'Productores, consumidores y analistas de datos', grad: 'from-emerald-600 to-emerald-800', bcol: 'bg-emerald-100 text-emerald-800', logo: 'assets/images/logos/ifapa.jpg' },
+            //{ abbr: 'EnergInf', name: 'Empresas de infraestructuras y energía', desc: 'Productores, consumidores y analistas de datos', grad: 'from-slate-600 to-slate-800', bcol: 'bg-slate-100 text-slate-800', logo: 'assets/images/logos/ifapa.jpg' },
 
             // Centro demostrador vinculado
-            { abbr: 'CD-EADAA', name: 'Centro Demostrador EDA Agroalimentario de Andalucía (CD-EADAA)', desc: 'Proyecto vinculado; apoyo e interoperabilidad', grad: 'from-neutral-500 to-neutral-700', bcol: 'bg-neutral-100 text-neutral-800', logo: 'assets/images/logos/ifapa.jpg' },
+            //{ abbr: 'CD-EADAA', name: 'Centro Demostrador EDA Agroalimentario de Andalucía (CD-EADAA)', desc: 'Proyecto vinculado; apoyo e interoperabilidad', grad: 'from-neutral-500 to-neutral-700', bcol: 'bg-neutral-100 text-neutral-800', logo: 'assets/images/logos/ifapa.jpg' },
 
             // Apoyos/ámbito europeo citados
-            { abbr: 'DG AGRI', name: 'DG Agricultura y Desarrollo Rural (Comisión Europea)', desc: 'Apoyo en el marco de la Misión del Suelo y red de Living Labs', grad: 'from-indigo-500 to-indigo-700', bcol: 'bg-indigo-100 text-indigo-800', logo: 'assets/images/logos/ifapa.jpg' },
-            { abbr: 'JRC', name: 'Joint Research Centre (JRC) – EU', desc: 'Conexión con SoilWise y EU Soil Observatory/ESDAC', grad: 'from-violet-600 to-violet-800', bcol: 'bg-violet-100 text-violet-800', logo: 'assets/images/logos/ifapa.jpg' },
+            //{ abbr: 'DG AGRI', name: 'DG Agricultura y Desarrollo Rural (Comisión Europea)', desc: 'Apoyo en el marco de la Misión del Suelo y red de Living Labs', grad: 'from-indigo-500 to-indigo-700', bcol: 'bg-indigo-100 text-indigo-800', logo: 'assets/images/logos/ifapa.jpg' },
+            //{ abbr: 'JRC', name: 'Joint Research Centre (JRC) – EU', desc: 'Conexión con SoilWise y EU Soil Observatory/ESDAC', grad: 'from-violet-600 to-violet-800', bcol: 'bg-violet-100 text-violet-800', logo: 'assets/images/logos/ifapa.jpg' },
         ];
 
 
